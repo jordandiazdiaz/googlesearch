@@ -1,0 +1,15 @@
+deploy:
+  provider: pypi
+  user: anthonyhessab
+  password:
+    secure: gPX9T1PM5F2R6s1ige1roNlFsCu0SZVFNmbfX3BVshoUaqEhRWZ32oSA5kvOZdEF054rRIPVkSE+hBM3U145TroFmRPIY7uUBA/4xgNojCTeWzM2CXaB8BzgSrkGNC9i8P4AhjJcBGzyy+lSipZinJ/9QWinxsLWj/IFbO2Fdhcl7rML7WFIgeUNznXqfMjMNc/3AXjJgywGXFSXAt+M8HtXg7RWlcKmpfox4ycpgLZaS0T3PK+zwGNZ7h3MfJ16X9/6MDcIpgZu3tKanjoS/m1AaJtnObyW6btu2kopoDI4hu3ZT33xHsORFAeJrgLGiPrEhlXxUUFjszbMzx+kij2WtgeSZpUwapaeppgI89P291MS5csjWHuhJZzENv7wE7AT8cYwiYvyD3YCYt4Kt27QNY5NvYt9SsFhQYRd/OPr2OGKwGPGvMRpanuuFL5x7sn0mflidUhLtgQ2+vwgYdJfY/LpgM1qh1VencsGdSvMxqxM56CEpOsM499Q0WQyxBDbZpA9eWbiG4+pkTaBrtQD4WoN28voN7Hq9u0YhaBhNJfkdDMfiW6h5Wdo4/3NyqS4Vq6828UTi6mnTdFUAyjrcxjH5LeoJpEAZVyAna1DpE7AHZPdE0vSjmMAAJtDVAnj77FnsiZzBNrxsGF1z213wLplYgUdmsXgEBi+Zns=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: anthonyhseb/googlesearch
+env:
+- TOXENV=py27
+install: pip install -U tox
+language: python
+python: 2.7
+script: tox -e ${TOXENV}
